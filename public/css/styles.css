@@ -1,0 +1,769 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins&family=Varela+Round&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Lato', sans-serif; */
+}
+
+html{
+    /* height: 100vh; */
+    /* position: relative; */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* background-color: #f3e4cd40; */
+}
+
+body{
+    min-height: 100vh; 
+    margin: 0;
+    position: relative;
+    /* position: relative; */
+    /* min-height: 100%; */
+    /* background: url('https://images.unsplash.com/photo-1549002942-c6af9c116f79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c3VubGlnaHR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'); */
+    /* background: url("https://media.istockphoto.com/photos/beautiful-cloudscape-over-the-sea-waves-sunrise-shot-picture-id1090614334?k=20&m=1090614334&s=612x612&w=0&h=i4WuZKpWGek66I2ezY4U7o65_xvo9o9HOr3OMobh5io="); */
+    background: url('https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 60px; /* Set same as footer's height */
+}
+
+a{
+    text-decoration: none;
+    /* color: #272727; */
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: #272727;
+    box-shadow: 0px 4px 12px #272727;
+}
+
+.container-fluid{
+    padding-left: 3%;
+}
+
+.navbar-logo{
+    font-family: "Varela Round", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    font-size: 20px;
+    color: #fe951c;
+}
+
+.navbar-logo:hover{
+    color: #fe951c;
+}
+
+.navbar-link{
+    color: white;
+    /* font-size: 18px; */
+    padding-right: 3%;
+    transition: all 0.2s linear;
+}
+
+.navbar-link:hover{
+    color: #fe951c;
+}
+
+.today-status{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin-top: 45px;
+    padding-left: 3%;
+    font-size: 48px;
+    /* font-weight: 600; */
+}
+
+.custom-city{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.pop-cities-btn{
+    /* display: inline-block; */
+    width: 150px;
+}
+
+.custom-city-form{
+    display: flex;
+    align-items: center;
+}
+
+.custom-city-form input{
+    width: 400px;
+    height: 36px;
+    margin-right: 5px;
+    padding: 5px 16px;
+    background-color: #ffebcdad;;
+    /* background-color: blanchedalmond; */
+    border: 1px solid black;
+    border-radius: 16px;
+    /* width: 40%; */
+    outline: none;
+}
+
+.pop-cities-btn{
+    margin-top: 20px;
+}
+
+/* .bg-primary{
+    width: 100px;
+    height: 36px;
+    border: 2px solid black;
+    border-radius: 16px;
+    background: none;
+    color: white;
+    background-color: #007bff !important;
+    transition: all 0.2s linear;
+} */
+
+.custom-city-form button{
+    width: 100px;
+    height: 36px;
+    /* border: 1px solid black; */
+    border-radius: 16px;
+    /* background: none; */
+    /* color: white; */
+    /* background-color: #007bff !important; */
+    /* /* transition: all 0.2s linear; */
+}
+
+/* .bg-primary:hover{
+    background-color: #0b5ed7;
+    background-color: #0d6efd;
+} */
+
+.curr-and-search{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 0 3%;
+}
+
+.curr-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    max-width: 400px;
+    min-height: 180px;
+    /* margin-top: 40px;
+    margin-left: 3%; */
+    padding-right: 1.5%;
+    border: 2px solid black;
+    /* background-color: #747476bf; */
+    background: rgba(24, 24, 27, 0.8);
+    color: white;
+}
+
+/* .curr-box{
+    display: flex;
+    align-items: center;
+} */
+
+.curr-day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 30%; */
+    margin-top: -5%;;
+}
+
+.curr-temp{
+    margin-top: -10%;
+}
+
+/* .curr-day span{
+    margin-right: 12px;
+} */
+
+.curr-day-extra, .curr-day-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.curr-day-extra{
+    /* width: 30%; */
+    margin-left: 2%;
+    margin-right: 6%;
+}
+
+.curr-day-info{
+    word-break: break-word;
+}
+
+.curr-state-country{
+    text-align: center;
+}
+
+/* .forecast-title{
+    font-size: 24px;
+    padding-left: 3%;
+    margin-top: 100px;
+    margin-bottom: 30px;
+} */
+
+.home-city-row, .city-row{
+    display: flex;
+    justify-content: center;
+}
+
+.city-containers, .containers{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    justify-content: center;
+    /* margin: 100px 0; */
+    margin-top: 100px;
+    margin-bottom: 60px;
+    padding: 3%;
+    /* padding-bottom: 5%; */
+    background-color: rgba(24, 24, 27, 0.8);
+    /* border: 2px solid black; */
+    /* height: 100px; */
+}
+
+.city-container{
+    font-family: 'Poppins', sans-serif;
+    /* color: lightgray; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 225px;
+    padding: 8% 2.5%;
+    margin: 20px 0;
+    /* border: 1px solid black; */
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.2);
+}
+
+.day{
+    color: lightgray;
+    width: 50px;
+    text-align: center;
+    /* margin-top: 10px; */
+    background-color: #3c3c44;
+    border-radius: 6px;
+    /* color: lightgray; */
+}
+
+.temp-night, .temp-day{
+    /* color: lightgray; */
+    width: 130px;
+    text-align: center;
+    /* padding: 0 4px; */
+    border-radius: 4px;
+}
+
+.temp-night{
+    color: white;
+    /* margin-bottom: 5px; */
+}
+
+.temp-day{
+    color: black;
+}
+
+.pop-cities-head{
+    font-size: 30px;
+    color: white;
+    padding: 0 3%;
+    margin-top: 45px;
+    margin-bottom: 0;
+}
+
+.cities-containers{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* margin: 0 5%;
+    margin-bottom: 60px; */
+    padding: 0 1%;
+    /* padding-left: 3%; */
+    padding-bottom: 60px;
+    /* background: url("https://media.istockphoto.com/photos/dubai-city-at-night-picture-id464388677?b=1&k=20&m=464388677&s=170667a&w=0&h=ms5GNwt50rpPx_npI76i_cCgVCthGlj7rkSoJ2ycXPo=");
+    background-repeat: no-repeat;
+    background-size:cover; */
+    /* background: url("https://c.tenor.com/9QfGNzVf2EQAAAAC/sky-lighting-bolts.gif");
+    background-repeat: no-repeat;
+    background-size:cover; */
+}
+
+.cities-row{
+    margin-right: -1%;
+}
+
+/* .cities-row{ */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    /* margin-top: 60px; */
+/* } */
+
+.bootstrap-col{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.popcity-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 18rem; */
+    cursor: pointer;
+    margin-top: 60px;
+}
+
+.popcity-form button{
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.card{
+    color: white;
+    background: none;
+    /* background-color: rgba(24, 24, 27, 0.6); */
+    box-shadow: 0px 4px 12px transparent;
+    border-radius: 0 0 6px 6px;
+    transition: all 0.2s linear;
+    width: 18rem;
+}
+
+.card:hover{
+    box-shadow: 0px 4px 12px #272727;
+}
+
+.card-body{
+    background-color: rgba(24, 24, 27, 0.8);
+    border-radius: 0 0 6px 6px;
+}
+
+.cities-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 260px;
+    /* background-color: #161616; */
+    background-color: #121212;
+    color: white;
+    /* margin: 0 5%; */
+    /* margin-top: 20px; */
+    /* border: 2px solid black; */
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px transparent;
+    transition: all 0.2s linear;
+}
+
+.cities-container:hover{
+    box-shadow: 0px 4px 12px #272727;
+}
+
+.cities-container span{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    /* padding-bottom: 25px; */
+    margin-bottom: 20px;
+}
+
+/* .containers, .city-containers, .cities-containers{
+    padding-bottom: 99px;
+} */
+
+.pop-cities{
+    width: 240px;
+    height: 200px;
+    /* object-fit: contain; */
+    /* border-radius: 10px 10px 100px 0px; */
+    /* border-radius: 10px 10px 0px 0px; */
+    border-radius: 16px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    /* display: flex; */
+    /* justify-content: center; */
+	/* position: static; */
+	/* text-align: center;
+	bottom: 0;
+	width: 100%; */
+	height: 60px;
+    padding: 17px 0;
+	background-color: #272727;
+    box-shadow: 0px -4px 12px #272727;
+}
+
+.footer p{
+    color: white;
+    text-align: center;
+}
+
+.footer span {
+    color: #fe951c;
+    /* margin-top: 25px; */
+	/* font-size: 12px; */
+    /* color: #fff; */
+} 
+
+.jumbotron{
+    background-color: #e9ecef;
+    /* height: 300px; */
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.not-found-icon{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media (min-width: 1200px){
+    .col-xl{
+        flex: 0 0 auto;
+        width: 12.5%;
+    }
+}
+
+@media (max-width: 1200px){
+    /* .curr-container{
+        width: 450px;
+    } */
+
+    .custom-city-form input{
+        width: 325px;
+    }
+
+    .city-container{
+        width: 180px;
+        /* height: 200px; */
+        padding: 5% 0;
+    }
+    
+    .card{
+        width: 19rem;
+    }
+}
+
+@media (max-width: 992px){
+    .navbar-logo{
+        font-size: 18px;
+    }
+    
+    .navbar-link{
+        font-size: 15px;
+    }
+
+    .today-status{
+        text-align: center;
+        padding: 0 3%;
+        font-size: 48px;
+    }
+    
+    .curr-and-search{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        /* align-items: center; */
+        justify-content: space-between;
+        margin-top: 0px;
+    }
+
+    .curr-container{
+        min-width: 450px;
+        padding-right: 2.5%;
+    }
+
+    .custom-city-form input{
+        min-width: 350px;
+    }
+
+    .pop-cities-head{
+        font-size: 28px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .popcity-form{
+        margin-top: 45px;
+    }
+    
+    .card{
+        width: 22rem;
+    }
+
+    .footer p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px){
+    .navbar-logo{
+        letter-spacing: 0rem;
+        font-size: 16px;
+    }
+    
+    .navbar-link{
+        font-size: 14px;
+    }
+
+    .today-status{
+        font-size: 42px;
+    }
+
+    /* .city-container{
+        padding: 5% 0;
+    } */
+
+    .pop-cities-head{
+        font-size: 24px;
+        margin-top: 24px;
+    }
+
+    .popcity-form{
+        margin-top: 30px;
+    }
+
+    .card{
+        width: 25rem;
+    }
+
+    .footer p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px){
+    .navbar{
+        height: 50px;
+    }
+
+    .navbar-logo{
+        font-size: 15px;
+    }
+    
+    .navbar-link{
+        font-size: 13px;
+    }
+
+    .today-status{
+        font-size: 36px;
+    }
+
+    .curr-container{
+        width: 375px;
+        min-width: auto;
+        padding-right: 4%;
+    }
+
+    .custom-city-form input{
+        width: 275px;
+        min-width: auto;
+    }
+
+    .col-xs{
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .pop-cities-head{
+        font-size: 22px;
+        margin-top: 22px;
+    }
+
+    .cities-row{
+        margin-right: -2%;
+    }
+
+    .popcity-form{
+        margin-top: 25px;
+    }
+
+    .card{
+        width: 22rem;
+    }
+
+    .footer{
+        height: 50px;
+    }
+
+    .footer p{
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 400px){
+    .navbar-logo{
+        font-size: 13px;
+    }
+    
+    .navbar-link{
+        font-size: 12px;
+    }
+
+    .today-status{
+        font-size: 28px;
+    }
+
+    .curr-and-search{
+        margin-top: -15px;
+    }
+
+    .curr-container{
+        flex-direction: column;
+        width: 275px;
+        height: auto;
+        padding-right: 0;
+    }
+
+    .curr-day{
+        flex-direction: row;
+        margin-top: -4%;
+        margin-left: -10%;
+    }
+
+    .curr-temp{
+        margin-top: -2%;
+    }
+
+    .curr-day-extra {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -5%;
+        margin-bottom: 2%;
+    }
+
+    .curr-day-info{
+        margin-bottom: 5%;
+    }
+
+    .custom-city-form input {
+        width: 200px;
+        /* height: 38px; */
+        /* width: 150px; */
+        height: 32px;
+        padding: 3px 8px;
+        border-radius: 6px;
+    }
+
+    .custom-city-form button{
+        display: flex;
+        align-items: center;
+        width: auto;
+        /* height: 38px; */
+        height: 32px;
+        /* border: 1px solid black; */
+        border-radius: 6px;
+    }
+
+    .pop-cities-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        width: 200px;
+        height: 32px;
+    }
+
+    .col-xs{
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .pop-cities-head{
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .popcity-form{
+        margin-top: 18px;
+    }
+
+    .card{
+        width: 16rem;
+    }
+
+    .footer{
+        padding: 11px 0;
+      }
+
+    .footer p{
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 300px){
+    .today-status{
+        margin-top: 25px;
+    }
+
+    .curr-container{
+        width: 225px;
+    }
+
+    .custom-city-form input {
+        width: 150px;
+        height: 32px;
+        padding: 3px 8px;
+    }
+
+    /* .custom-city-form button{
+        height: 32px;
+        display: flex;
+        align-items: center;
+    }     */
+
+    .pop-cities-btn{
+        /* display: flex; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* margin-top: 10px; */
+        width: 100%;
+        /* height: 32px; */
+    }
+}

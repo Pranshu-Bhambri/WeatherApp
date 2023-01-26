@@ -1,0 +1,39 @@
+<%- include("home-main"); -%>
+
+<div class="curr-and-search">
+
+    <div id="curr-container" class="curr-container">
+
+    </div>
+    
+    <div class="custom-city">
+        <form action="/" method="post" id="custom-city-form" class="custom-city-form">
+            <input type="text" id="cityName" name="cityName" placeholder="Search for a city">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+
+        <button onclick="location.href = '/cities';" id="myButton" class="btn btn-primary pop-cities-btn" >Popular Cities</button>
+        
+        <!-- <a href="/cities"class="btn btn-primary pop-cities-btn">Search for Popular Cities</a> -->
+            <!-- <span class="btn btn-primary pop-cities-btn">Search for Popular Cities</span> -->
+        
+
+        <!-- <a href="/cities">
+            <span class="btn btn-primary pop-cities-btn">Search for Popular Cities</span>
+        </a> -->
+
+
+    </div>
+
+</div>
+
+<!-- <p class="forecast-title">8-day forecast</p> -->
+
+<div id="containers" class="containers">
+    <div id="home-city-row" class="row home-city-row">
+
+    </div>    
+</div>
+
+<%- include("partials/footerHome"); -%>
+

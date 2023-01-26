@@ -1,0 +1,79 @@
+<%- include("home-main"); -%>
+
+<div class="curr-and-search">
+
+    <div id="curr-container" class="curr-container">
+        <% currWeatherDay.forEach(function(currWeatherDataItems){ %>
+
+            <% let isCity=currWeatherDataItems.currState; %>
+        
+            <!-- <div class="curr-box"> -->
+                <div class="curr-day">
+                    <img src="http://openweathermap.org/img/wn/<%= currWeatherDataItems.icon %>@2x.png" alt="weather icon" class="curr-icon">
+                    <span class="curr-temp"><%= currWeatherDataItems.currTemp %>&#176;C</span> 
+                </div>
+                <div class="curr-day-extra">
+                    <span class="curr-pressure">Pressure:&nbsp;<%= currWeatherDataItems.currPressure %>&nbsp;hPa</span> 
+                    <span class="curr-humidity">Humidity:&nbsp;<%= currWeatherDataItems.currHumidity %>%</span> 
+                    <span class="curr-wind">Wind:&nbsp;<%= currWeatherDataItems.currWind %>&nbsp;m/s</span> 
+                </div>
+                <div class="curr-day-info">
+                    <div class="curr-city"><%= currWeatherDataItems.currCity %></div>
+                    <div class="curr-state-country"><%= `${isCity? currWeatherDataItems.currState + ',' : ""}` %>&nbsp;<%= currWeatherDataItems.currCountry %></div>
+                    <!-- <div class="curr-state-country"><%= currWeatherDataItems.currState %>&nbsp;<%= currWeatherDataItems.currCountry %></div> -->
+                    <% console.log(isCity); %>
+                    <div class="curr-description"><%= currWeatherDataItems.currDescription[0].toUpperCase() + currWeatherDataItems.currDescription.substring(1) %></div>
+                </div>
+            <!-- </div> -->
+
+        <% }) %>
+    </div>
+    
+    <div class="custom-city">
+        <form action="/" method="post" id="custom-city-form" class="custom-city-form">
+            <input type="text" id="cityName" name="cityName" placeholder="Search for a city">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <button onclick="location.href = '/cities';" id="myButton" class="btn btn-primary pop-cities-btn" >Popular Cities</button>
+
+        <!-- <a href="/cities">
+            <span class="btn btn-primary pop-cities-btn">Search for Popular Cities</span>
+        </a> -->
+    </div>
+    
+</div>
+
+<!-- <p class="forecast-title">8-day forecast</p> -->
+
+<div id="city-containers" class="city-containers">
+
+    <div class="row city-row">
+        <!-- <div class="col-xl-3 col-lg-4 col-md-6 col- bootstrap-col"> -->
+            <% weatherDays.forEach(function(weatherDay){ %>
+    
+                <div class="col-xl col-lg-3 col-md-4 col-sm-6 col-xs bootstrap-col">
+                    <div class="city-container">
+                        <div class="day"></div>
+                        <img src="http://openweathermap.org/img/wn/<%= weatherDay.icon %>@2x.png" alt="weather icon" class="w-icon">
+                        <div class="temp-night bg-dark">Night: <%= weatherDay.night %>&#176;C</div>
+                        <div class="temp-day bg-warning">Day: <%= weatherDay.day %>&#176;C</div>
+                    </div>
+                </div>
+                
+            <% }) %>
+        <!-- </div> -->
+    </div>
+
+<!-- <% weatherDays.forEach(function(weatherDay){ %>
+    
+    <div class="city-container">
+        <div class="day"></div>
+        <img src="http://openweathermap.org/img/wn/<%= weatherDay.icon %>@2x.png" alt="weather icon" class="w-icon">
+        <div class="temp-night bg-dark">Night - <%= weatherDay.night %>&#176;C</div>
+        <div class="temp-day bg-warning">Day - <%= weatherDay.day %>&#176;C</div>
+    </div>
+    
+<% }) %> -->
+</div>
+
+<%- include("partials/footerCity"); -%>
